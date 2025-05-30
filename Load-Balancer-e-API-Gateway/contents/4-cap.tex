@@ -1,0 +1,56 @@
+\begin{frame}[fragile]{API Gateway}
+    \begin{itemize}%[<+->]
+        Um API Gateway é um ponto de entrada único para gerenciar e encaminhar requisições a diferentes serviços de uma aplicação em um sistema distribuído.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Características de um API gateway}
+    \begin{itemize}%[<+->]
+        \item Pode fazer balanceamento de carga.
+        \item Atua na camada de aplicação.
+        \item Faz tradução de protocolo.
+        \item Monitoramento, Logging e Analytics.
+        \item Gerenciamento da API:
+            \begin{itemize}
+                \item roteia requisições para serviços mapeados;
+                \item versionamento de API;
+                \item adiciona headers e query params;
+                \item throttling e rate limiting;
+                \item transformação e agregação de resposta.
+            \end{itemize}
+        \item Diminui carga de trabalho nos serviços:
+            \begin{itemize}
+                \item pode responder a requisições com dados em cache;
+                \item pode lidar com autenticação e autorização;
+                \item validação de requisições;
+                \item não repassaria requisições de um ataque DDoS para serviços.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Desafios e desvantagens}
+\begin{itemize}%[<+->]
+        \item Adiciona uma nova camada da arquitetura:
+            \begin{itemize}
+                \item mais um componente para o time manter;
+                \item mais ferramentas que as pessoas do time devem conhecer;
+                \item cada request passa por uma nova camada, o que pode gerar latência adicional;
+                \item aumenta o custo financeiro com ferramentas gerenciadas ou infra em soluções self-hosted.
+            \end{itemize}
+        \item É um ponto único de falha:
+            \begin{itemize}
+                \item se o gateway cair, todos os serviços ficam inoperantes;
+                \item erros de configuração podem comprometer segurança e desempenho;
+                \item é necessário buscar alta disponibilidade, mediante técnicas como replicação e balanceamento, ou usar serviços gerenciados que suportem esse requisito.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ferramentas}
+    \begin{itemize}%[<+->]
+        \item \textbf{Kong:} Funciona com Nginx e é extensível através de plugins escritos em Lua.
+        \item \textbf{AWS API Gateway:} Serviço de API Gateway gerenciado da AWS.
+    \end{itemize}
+\end{frame}

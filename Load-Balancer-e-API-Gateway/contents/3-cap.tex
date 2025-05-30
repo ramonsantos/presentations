@@ -1,0 +1,41 @@
+\begin{frame}[fragile]{Load balancing}
+    \begin{itemize}%[<+->]
+        Load balancing (balanceamento de carga) é o processo de redistribuição da carga de trabalho entre os nós de um sistema distribuído para melhorar tanto a utilização dos recursos, quanto o tempo de resposta das tarefas, evitando também situações em que alguns nós fiquem muito carregados enquanto outros fiquem ociosos ou realizando pouco trabalho.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Características de um load balancing}
+    \begin{itemize}%[<+->]
+        \item Distribuir tráfego/carga entre múltiplos servidores.
+        \item Possibilita a escalabilidade horizontal.
+        \item Segurança: Separa tráfego público de tráfego privado.
+        \item Pode atuar nas camadas de aplicação e transporte.
+        \item Realizam health checks para verificar se um servidor consegue receber requisições.
+        \item Possibilita manutenção de servidores sem downtime.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Mecanismos de balanceamento}
+    \begin{itemize}%[<+->]
+        \item \textbf{Round Robin:} Envia requisições sequencialmente entre os servidores.
+        \item \textbf{Least Connections:} Escolhe o servidor com menos conexões ativas.
+        \item \textbf{IP Hash:} Uma função hash é usada para determinar qual servidor deve receber a próxima request com base no endereço IP do cliente.
+        \item \textbf{Weighted load balancing:} Usa o algoritmo Round Robin com diferentes pesos nos servidores. É útil quando determinado servidor conta com mais capacidade computacional que os demais.
+        \item \textbf{Least Time:} Escolhe o servidor com o menor tempo médio de resposta.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ferramentas}
+    \begin{itemize}%[<+->]
+        \item \textbf{Nginx:} Leve e extensível (com Lua). Muito usado para balancear carga HTTP.
+        \item \textbf{HAProxy:} Além de ser usado para balanceamento de carga na camada de aplicação, é bastante popular no balanceamento de carga na camada de transporte. Como, por exemplo, balanceamento de conexão de leitura entre réplicas read-only do PostgreSQL.
+        \item \textbf{Cloudflare Load Balancing:} É um serviço de balanceamento de carga global, que tem como principal característica o um roteamento inteligente e personalizável, onde a região geográfica, ou até mesmo as coordenadas do GPS do dispositivo que fez a requisição, podem ser considerados para encontrar o nó de menor latência.
+        \item \textbf{AWS Elastic Load Balancing:}
+        \begin{itemize}
+            \item \textbf{Application Load Balancer:} Balanceador de carga da camada de aplicação.
+            \item \textbf{Network Load Balancer:} Balanceador de carga da camada de transporte.
+        \end{itemize}
+    \end{itemize}
+\end{frame}

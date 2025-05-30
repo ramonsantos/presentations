@@ -1,0 +1,30 @@
+\begin{frame}[fragile]{Camadas de redes no modelo TCP/IP}
+    \begin{itemize}%[<+->]
+        \item Camada de aplicação:
+            \begin{itemize}%[<+->]
+                \item contém os protocolos de alto nível;
+                \item HTTP, DNS, SMTP, FTP e etc.
+            \end{itemize}
+        \item Camada de transporte:
+            \begin{itemize}%[<+->]
+                \item responsável pela comunicação end-to-end entre dois dispositivos;
+                \item recebe dados da camada de aplicação, os divide em unidades menores e repassa para a camada de rede;
+                \item TCP e UDP.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Camadas de redes no modelo TCP/IP}
+    \begin{itemize}%[<+->]
+        \item Camada de internet (ou camada de rede):
+            \begin{itemize}%[<+->]
+                \item faz o roteamento de pacotes entre diferentes redes;
+                \item IP e ICMP.
+            \end{itemize}
+        \item Camada de enlace:
+            \begin{itemize}%[<+->]
+                \item lida com a comunicação física entre os dispositivos;
+                \item Ethernet (via cabo), 802.11 (sem fio) e etc.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
